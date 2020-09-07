@@ -1,0 +1,1050 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+
+
+    	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<!-- Bootstrapp plugin -->
+
+  <!--- Main Style Sheet ---->
+
+  
+  <link rel="stylesheet" href="Css/ManageCoins.css">
+
+
+    <title>Manage Coins</title>
+	
+	
+	
+	
+	
+	
+	
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="#">
+    <meta name="keywords" content="Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
+    <meta name="author" content="#">
+    <!-- Favicon icon -->
+    
+    <!-- Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="bower_components\bootstrap\css\bootstrap.min.css">
+    <!-- feather Awesome -->
+    <link rel="stylesheet" type="text/css" href="assets\icon\feather\css\feather.css">
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="assets\css\style.css">
+    <link rel="stylesheet" type="text/css" href="assets\css\jquery.mCustomScrollbar.css">
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+section {
+  position: relative;
+}
+
+
+.btn-pluss a {
+  display: block;
+  position: relative;
+  color: #006b99;
+  text-decoration: none;
+  overflow: hidden;
+  padding: 5px;
+  border-radius: 5px;
+}
+.btn-pluss a:hover {
+  text-decoration: inherit;
+  color: white;
+  background-color: #006b99;
+  -webkit-transition: background-color .5s ease;
+  transition: background-color .5s ease;
+}
+.btn-pluss:after {
+  content: '+';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  line-height: 20px;
+  text-align: center;
+  font-size: 1.1rem;
+  background-color: #006b99;
+  color: white;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+  -webkit-transition: all .3s .5s ease;
+  transition: all .3s .5s ease;
+  cursor: pointer;
+  cursor: hand;
+}
+.btn-pluss ul {
+  opacity: 0;
+}
+.btn-pluss ul {
+  margin-top: 15px;
+  opacity: 0;
+  width: 100%;
+  margin-left: 0px;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  text-align: center;
+  font-size: 0.9rem;
+}
+.btn-pluss ul li {
+  background-color: #e4e4e4;
+  margin-top: 5px;
+  border-radius: 5px;
+  width: 100%;
+  height: 0px;
+  overflow: hidden;
+  -webkit-transition: height 1s ease;
+  transition: height 1s ease;
+}
+
+.tooltip {
+  position: relative;
+  padding: 5px;
+  border-radius: 5px;
+  width: 70px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-name: jump;
+          animation-name: jump;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  background-color: #fff;
+  color: #006b99;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  pointer-events: none;
+}
+.tooltip::after {
+  content: '';
+  position: absolute;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  display: block;
+  height: 10px;
+  width: 10px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: inherit;
+}
+.tooltip::before {
+  content: '';
+  color: white;
+}
+
+.btn-pluss-wrapper:hover .tooltip {
+  -webkit-animation-duration: 0s;
+          animation-duration: 0s;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  color: white;
+  width: 90px;
+  float: right;
+}
+.btn-pluss-wrapper1:hover .tooltip {
+  -webkit-animation-duration: 0s;
+          animation-duration: 0s;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  color: white;
+  width: 90px;
+  float: right;
+}
+.btn-pluss-wrapper:hover .tooltip::before {
+  float: right;
+  content: 'Choose!';
+  display: block;
+  color: #006b99;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: all 1s .3s ease;
+  transition: all 1s .3s ease;
+}
+.btn-pluss-wrapper1:hover .tooltip::before {
+  float: right;
+  content: 'Choose!';
+  display: block;
+  color: #006b99;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: all 1s .3s ease;
+  transition: all 1s .3s ease;
+}
+.btn-pluss-wrapper:hover .btn-pluss {
+  width: 34px;
+  border-radius: 15px;
+  float: right;
+  padding-bottom: 5px;
+  -webkit-transition: width .3s ease, border-radius .3s ease, padding-bottom .3s ease;
+  transition: width .3s ease, border-radius .3s ease, padding-bottom .3s ease;
+}
+.btn-pluss-wrapper1:hover .btn-pluss {
+  width: 34px;
+  border-radius: 15px;
+  float: right;
+  padding-bottom: 5px;
+  -webkit-transition: width .3s ease, border-radius .3s ease, padding-bottom .3s ease;
+  transition: width .3s ease, border-radius .3s ease, padding-bottom .3s ease;
+}
+.btn-pluss-wrapper:hover .btn-pluss::after {
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  left: 50%;
+  float: right;
+  top: 10px;
+  -webkit-transform: translateY(-5px) translateX(-50%);
+          transform: translateY(-5px) translateX(-50%);
+}
+.btn-pluss-wrapper:hover .btn-pluss ul {
+  opacity: 1;
+  float: right;
+  margin-top: 30px;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.btn-pluss-wrapper:hover .btn-pluss li {
+  height: 25px;
+  float: right;
+  -webkit-transition: height 1s ease;
+  transition: height 1s ease;
+}
+.btn-pluss-wrapper:hover .btn-pluss li:hover {
+  border-bottom: 1px solid #d2c9c9;
+  float: right;
+}
+
+.btn-pluss-wrapper1:hover .btn-pluss::after {
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  left: 50%;
+  float: right;
+  top: 10px;
+  -webkit-transform: translateY(-5px) translateX(-50%);
+          transform: translateY(-5px) translateX(-50%);
+}
+.btn-pluss-wrapper1:hover .btn-pluss ul {
+  opacity: 1;
+  float: right;
+  margin-top: 30px;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.btn-pluss-wrapper1:hover .btn-pluss li {
+  height: 25px;
+  float: right;
+  -webkit-transition: height 1s ease;
+  transition: height 1s ease;
+}
+.btn-pluss-wrapper1:hover .btn-pluss li:hover {
+  border-bottom: 1px solid #d2c9c9;
+  float: right;
+}
+
+@-webkit-keyframes jump {
+  0% {
+    -webkit-transform: translateY(3px);
+            transform: translateY(3px);
+  }
+  50% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+  }
+  100% {
+    -webkit-transform: translateY(3px);
+            transform: translateY(3px);
+  }
+}
+
+@keyframes jump {
+  0% {
+    -webkit-transform: translateY(3px);
+            transform: translateY(3px);
+  }
+  50% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+  }
+  100% {
+    -webkit-transform: translateY(3px);
+            transform: translateY(3px);
+  }
+}
+</style>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+
+<body>
+    <!-- Pre-loader start 
+    <div class="theme-loader">
+        <div class="ball-scale">
+            <div class='contain'>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Pre-loader end -->
+    <div id="pcoded" class="pcoded">
+        <div class="pcoded-overlay-box"></div>
+        <div class="pcoded-container navbar-wrapper">
+		    
+
+            <nav class="navbar header-navbar pcoded-header">
+                <div class="navbar-wrapper">
+					
+					<nav class="btn-pluss-wrapper1">
+							<div href="#" class="btn-pluss">
+								<ul>
+									<li><a href="#about">About me</a></li>
+									<li><a href="#blog">Blog</a></li>
+									<li><a href="#projects">Projects</a></li>
+									<li><a href="#contact">Contact</a></li>
+								</ul>
+							</div>
+						</nav>
+                    <div class="navbar-logo">
+                        <a class="mobile-menu" id="mobile-collapse" href="#!">
+                            <i class="feather icon-menu"></i>
+							
+                        </a>
+						
+                        <a href="index-1.htm">
+                            <img class="logo" src="assets\images\logo.png" alt="Theme-Logo">
+							
+                        </a>
+						
+                        <a class="mobile-options">
+                            <i class="feather icon-more-horizontal"></i>
+                        </a>
+                    </div>
+					
+					
+
+                    <div class="navbar-container container-fluid">
+                        <ul class="nav-left">
+                            
+                            <li>
+                                <a href="#!" onclick="javascript:toggleFullScreen()">
+                                    <i class="feather icon-maximize full-screen"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav-right">
+							<li class="header-search">
+                                <div class=" morphsearch-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control">
+                                        <span class="input-group-addon search-btn"><i class="feather icon-search"></i></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="header-notification">
+                                <div class="dropdown-primary dropdown">
+                                    <div class="dropdown-toggle" data-toggle="dropdown">
+                                        <i class="feather icon-bell"></i>
+                                        <span class="badge bg-c-pink">5</span>
+                                    </div>
+                                    <ul class="show-notification notification-view dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                                        <li>
+                                            <h6>Notifications</h6>
+                                            <label class="label label-danger">New</label>
+                                        </li>
+                                        <li>
+                                            <div class="media">
+                                                <img class="d-flex align-self-center img-radius" src="assets\images\avatar-4.jpg" alt="Generic placeholder image">
+                                                <div class="media-body">
+                                                    <h5 class="notification-user">John Doe</h5>
+                                                    <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
+                                                    <span class="notification-time">30 minutes ago</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="media">
+                                                <img class="d-flex align-self-center img-radius" src="assets\images\avatar-3.jpg" alt="Generic placeholder image">
+                                                <div class="media-body">
+                                                    <h5 class="notification-user">Joseph William</h5>
+                                                    <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
+                                                    <span class="notification-time">30 minutes ago</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="media">
+                                                <img class="d-flex align-self-center img-radius" src="assets\images\avatar-4.jpg" alt="Generic placeholder image">
+                                                <div class="media-body">
+                                                    <h5 class="notification-user">Sara Soudein</h5>
+                                                    <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
+                                                    <span class="notification-time">30 minutes ago</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><nav class="btn-pluss-wrapper">
+
+			<div href="#" class="btn-pluss">
+			<ul>
+			<li><a href="#about">About me</a></li>
+			<li><a href="#blog">Blog</a></li>
+			<li><a href="#projects">Projects</a></li>
+			<li><a href="#contact">Contact</a></li>
+			</ul>
+			</div>
+			</nav></li>
+                            <li class="user-profile header-notification">
+                                <div class="dropdown-primary dropdown">
+                                    <div class="dropdown-toggle" data-toggle="dropdown">
+                                        <img src="assets\images\avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
+                                        <span>John Doe</span>
+                                        <i class="feather icon-chevron-down"></i>
+                                    </div>
+                                    <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                                        <li>
+                                            <a href="#!">
+                                                <i class="feather icon-settings"></i> Settings
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="user-profile.htm">
+                                                <i class="feather icon-user"></i> Profile
+                                            </a>
+                                        </li>
+                                        
+                                        <li>
+                                            <a href="auth-normal-sign-in.htm">
+                                                <i class="feather icon-log-out"></i> Logout
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </li>
+							
+                        </ul>
+                    </div>
+                </div>
+				
+            </nav>
+			
+			
+					
+					
+        
+            <div class="pcoded-main-container">
+			<li class="header-search1" >
+						<div class=" morphsearch-search">
+							<div class="input-group">
+								<input type="text" class="form-control">
+								<span class="input-group-addon search-btn"><i class="feather icon-search"></i></span>
+							</div>
+						</div>
+						
+                    </li>
+                <div class="pcoded-wrapper">
+				
+                    <nav class="pcoded-navbar">
+                        <div class="pcoded-inner-navbar main-menu">
+                            
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li class=" ">
+                                    <a href="home.html">
+                                        <span class="pcoded-micon"><i class="feather icon-home"></i></span>
+                                        <span class="pcoded-mtext">Home</span>
+                                    </a>
+                                   
+                                </li>
+                                <li class="pcoded-hasmenu">
+                                    <a href="#">
+                                        <span class="pcoded-micon"><i class="feather icon-sidebar"></i></span>
+                                        <span class="pcoded-mtext">Practice</span>
+                                        <!--<span class="pcoded-badge label label-warning">NEW</span>-->
+                                    </a>
+                                    <ul class="pcoded-submenu">
+                                        <li class=" ">
+                                            <a href="suggested_topics.html">
+                                                <span class="pcoded-mtext">Suggested Topics</span>
+                                            </a>
+                                            
+                                        </li>
+                                        <li class=" ">
+                                            <a href="suggested_modules.html">
+                                                <span class="pcoded-mtext">Suggested Modules</span>
+                                            </a>
+                                            
+                                        </li>
+                                        <li class=" ">
+                                            <a href="flash_cards.html">
+                                                <span class="pcoded-mtext">Flash Cards</span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="trending_topics.html">
+                                                <span class="pcoded-mtext">Trending Topics</span>
+                                            </a>
+                                        </li>
+                                        
+                                    </ul>
+                                </li>
+                                
+                                <li class="pcoded-hasmenu">
+                                    <a href="#">
+                                        <span class="pcoded-micon"><i class="feather icon-layers"></i></span>
+                                        <span class="pcoded-mtext">Mock Test</span>
+                                        <span class="pcoded-badge label label-danger">10000+</span>
+                                    </a>
+                                    <ul class="pcoded-submenu">
+                                        <li class=" ">
+                                            <a href="live_test.html">
+                                                <span class="pcoded-mtext">Live Test</span>
+                                                <span class="pcoded-badge label label-danger">Live</span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="free_test.html">
+                                                <span class="pcoded-mtext">Free Test</span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="suggested_test.html">
+                                                <span class="pcoded-mtext">Suggested Test</span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="upcomming_test.html">
+                                                <span class="pcoded-mtext">Upcoming Test</span>
+                                            </a>
+                                        </li>
+                                        
+
+                                    </ul>
+                                </li>
+                            </ul>
+                            <hr size="4" width="90%" color="Grey">
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li class="pcoded-hasmenu">
+                                    <a href="#">
+                                        <span class="pcoded-micon"><i class="feather icon-box"></i></span>
+                                        <span class="pcoded-mtext">Daily Dose</span>
+                                    </a>
+                                    <ul class="pcoded-submenu">
+                                        <li class=" ">
+                                            <a href="daily_news.html">
+                                                <span class="pcoded-mtext">Daily News</span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="Vocabulary_booster.html">
+                                                <span class="pcoded-mtext">Vocabulary Booster</span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="current_affairs.html">
+                                                <span class="pcoded-mtext">Current Affairs</span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="hindu_news.html">
+                                                <span class="pcoded-mtext">THE HINDU Summary</span>
+                                            </a>
+                                        </li>
+                                        
+                                    </ul>
+                                </li>
+                                <li class=" ">
+                                    <a href="#">
+                                        <span class="pcoded-micon"><i class="feather icon-gitlab"></i></span>
+                                        <span class="pcoded-mtext">MCQfy</span>
+                                        <span class="pcoded-badge label label-danger">HOT</span>
+                                    </a>
+                                    
+                                </li>
+                                
+                                
+                                <li>
+                                    <a href="clear_doubts.html">
+                                        <span class="pcoded-micon"><i class="feather icon-command"></i></span>
+                                        <span class="pcoded-mtext">Clear Doubts</span>
+                                    </a>
+                                    
+                                </li>
+                                <li>
+                                    <a href="calander.html">
+                                        <span class="pcoded-micon"><i class="feather icon-command"></i></span>
+                                        <span class="pcoded-mtext">Exam Calendar</span>
+                                    </a>
+                                    
+                                </li>
+                                <li>
+                                    <a href="ncert_solutions.html">
+                                        <span class="pcoded-micon"><i class="feather icon-command"></i></span>
+                                        <span class="pcoded-mtext">NCERT Solutions</span>
+                                    </a>
+                                    
+                                </li>
+                            </ul>
+                            <hr size="12px" width="90%" color="Grey">
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li class=" ">
+                                    <a href="about_you.html">
+                                        <span class="pcoded-micon"><i class="feather icon-clipboard"></i></span>
+                                        <span class="pcoded-mtext">About You</span>
+                                    </a>
+                                   <!-- <ul class="pcoded-submenu">
+                                        <li class=" ">
+                                            <a href="#">
+                                                <span class="pcoded-mtext">Profile</span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="#">
+                                                <span class="pcoded-mtext">Your Saved Question</span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="#">
+                                                <span class="pcoded-mtext">Your Activty</span>
+                                            </a>
+                                        </li>
+                                        
+                                    </ul> -->
+                                </li>
+                                
+                                <li class="">
+                                    <a href="manage_coins.html">
+                                        <span class="pcoded-micon"><i class="feather icon-book"></i></span>
+                                        <span class="pcoded-mtext">Manage Coins</span>
+                                        
+                                    </a>
+                                   <!-- <ul class="pcoded-submenu">
+                                        <li class=" ">
+                                            <a href="#">
+                                                <span class="pcoded-mtext">Purchase Coins</span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="#">
+                                                <span class="pcoded-mtext">My Transactions</span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="#">
+                                                <span class="pcoded-mtext">Spent Analyser</span>
+                                            </a>
+                                        </li>
+                                        
+                                    </ul>-->
+                                </li>
+                                <li class="">
+                                    <a href="sticky_notes.html">
+                                        <span class="pcoded-micon"><i class="feather icon-book"></i></span>
+                                        <span class="pcoded-mtext">Sticky Notes</span>
+                                        
+                                    </a>
+                            
+                                </li>
+                            </ul>
+                            <hr size="12px" width="90%" color="Grey">
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li class=" ">
+                                    <a href="resources.html">
+                                        <span class="pcoded-micon"><i class="feather icon-clipboard"></i></span>
+                                        <span class="pcoded-mtext">Our Resources</span>
+                                    </a>
+                                   
+                                </li>
+                            </ul>    
+                    </nav>
+                    <div class="pcoded-content">
+                        <div class="pcoded-inner-content">
+                            <div class="main-body">
+                                <div class="page-wrapper">
+								
+								
+								
+								
+								
+								
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- Post Data Here    -->
+	<div class="w3-container" >
+
+  <div style="width:100% "class="manageContainer">
+        <div class="manageContent">
+            <div class="availableCoins">
+                <h4>Available coins</h4>
+                <div>
+                    <img src="images/coins.svg" alt="coins">
+                    <span>10,000</span>
+                </div>
+                <button>Recharge</button>
+            </div>
+            <div class="manageHistory">
+                <span>Purchase History</span>
+                <span>Spent History</span>
+                <span>Earned Coins</span>
+            </div>
+            <div class="manageBox">
+                <section>
+                    <div class="manageCards">
+                        <h4>September</h4>
+                        <ul>
+                            <li>
+                                <h6>
+                                    <img src="images/coins.svg" alt="coins">
+                                    5000
+                                </h6>
+                                <p>
+                                    Date: 10-5-2020
+                                    <span>Time: 2:30</span>
+                                </p>
+                                <p>
+                                    Rs 100
+                                    <span style="text-align: center;">UPI</span>
+                                </p>
+                            </li>
+                            <li>
+                                <h6>
+                                    <img src="images/coins.svg" alt="coins">
+                                    5000
+                                </h6>
+                                <p>
+                                    Date: 10-5-2020
+                                    <span>Time: 2:30</span>
+                                </p>
+                                <p>
+                                    Rs 100
+                                    <span style="text-align: center;">UPI</span>
+                                </p>
+                            </li>
+                            <li>
+                                <h6>
+                                    <img src="images/coins.svg" alt="coins">
+                                    5000
+                                </h6>
+                                <p>
+                                    Date: 10-5-2020
+                                    <span>Time: 2:30</span>
+                                </p>
+                                <p>
+                                    Rs 100
+                                    <span style="text-align: center;">UPI</span>
+                                </p>
+                            </li>
+                            <li>
+                                <h6>
+                                    <img src="images/coins.svg" alt="coins">
+                                    5000
+                                </h6>
+                                <p>
+                                    Date: 10-5-2020
+                                    <span>Time: 2:30</span>
+                                </p>
+                                <p>
+                                    Rs 100
+                                    <span style="text-align: center;">UPI</span>
+                                </p>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="manageCards">
+                        <h4>March</h4>
+                        <ul>
+                            <li>
+                                <h6>
+                                    <img src="images/coins.svg" alt="coins">
+                                    5000
+                                </h6>
+                                <p>
+                                    Date: 10-5-2020
+                                    <span>Time: 2:30</span>
+                                </p>
+                                <p>
+                                    Rs 100
+                                    <span style="text-align: center;">UPI</span>
+                                </p>
+                            </li>
+                            <li>
+                                <h6>
+                                    <img src="images/coins.svg" alt="coins">
+                                    5000
+                                </h6>
+                                <p>
+                                    Date: 10-5-2020
+                                    <span>Time: 2:30</span>
+                                </p>
+                                <p>
+                                    Rs 100
+                                    <span style="text-align: center;">UPI</span>
+                                </p>
+                            </li>
+                            <li>
+                                <h6>
+                                    <img src="images/coins.svg" alt="coins">
+                                    5000
+                                </h6>
+                                <p>
+                                    Date: 10-5-2020
+                                    <span>Time: 2:30</span>
+                                </p>
+                                <p>
+                                    Rs 100
+                                    <span style="text-align: center;">UPI</span>
+                                </p>
+                            </li>
+                            <li>
+                                <h6>
+                                    <img src="images/coins.svg" alt="coins">
+                                    5000
+                                </h6>
+                                <p>
+                                    Date: 10-5-2020
+                                    <span>Time: 2:30</span>
+                                </p>
+                                <p>
+                                    Rs 100
+                                    <span style="text-align: center;">UPI</span>
+                                </p>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="manageCards">
+                        <h4>January</h4>
+                        <ul>
+                            <li>
+                                <h6>
+                                    <img src="images/coins.svg" alt="coins">
+                                    5000
+                                </h6>
+                                <p>
+                                    Date: 10-5-2020
+                                    <span>Time: 2:30</span>
+                                </p>
+                                <p>
+                                    Rs 100
+                                    <span style="text-align: center;">UPI</span>
+                                </p>
+                            </li>
+                            <li>
+                                <h6>
+                                    <img src="images/coins.svg" alt="coins">
+                                    5000
+                                </h6>
+                                <p>
+                                    Date: 10-5-2020
+                                    <span>Time: 2:30</span>
+                                </p>
+                                <p>
+                                    Rs 100
+                                    <span style="text-align: center;">UPI</span>
+                                </p>
+                            </li>
+                            <li>
+                                <h6>
+                                    <img src="images/coins.svg" alt="coins">
+                                    5000
+                                </h6>
+                                <p>
+                                    Date: 10-5-2020
+                                    <span>Time: 2:30</span>
+                                </p>
+                                <p>
+                                    Rs 100
+                                    <span style="text-align: center;">UPI</span>
+                                </p>
+                            </li>
+                            <li>
+                                <h6>
+                                    <img src="images/coins.svg" alt="coins">
+                                    5000
+                                </h6>
+                                <p>
+                                    Date: 10-5-2020
+                                    <span>Time: 2:30</span>
+                                </p>
+                                <p>
+                                    Rs 100
+                                    <span style="text-align: center;">UPI</span>
+                                </p>
+                            </li>
+
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+
+
+
+
+	</div>
+
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+
+                                </div>
+
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Required Jquery -->
+    <script data-cfasync="false" src="..\..\..\cdn-cgi\scripts\5c5dd728\cloudflare-static\email-decode.min.js"></script><script type="text/javascript" src="bower_components\jquery\js\jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components\jquery-ui\js\jquery-ui.min.js"></script>
+    <script type="text/javascript" src="bower_components\popper.js\js\popper.min.js"></script>
+    <script type="text/javascript" src="bower_components\bootstrap\js\bootstrap.min.js"></script>
+    <!-- jquery slimscroll js -->
+    <script type="text/javascript" src="bower_components\jquery-slimscroll\js\jquery.slimscroll.js"></script>
+    <!-- modernizr js -->
+    <script type="text/javascript" src="bower_components\modernizr\js\modernizr.js"></script>
+    <!-- Chart js -->
+    <script type="text/javascript" src="bower_components\chart.js\js\Chart.js"></script>
+    <!-- amchart js -->
+    <script src="assets\pages\widget\amchart\amcharts.js"></script>
+    <script src="assets\pages\widget\amchart\serial.js"></script>
+    <script src="assets\pages\widget\amchart\light.js"></script>
+    <script src="assets\js\jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="assets\js\SmoothScroll.js"></script>
+    <script src="assets\js\pcoded.min.js"></script>
+    <!-- custom js -->
+    <script src="assets\js\vartical-layout.min.js"></script>
+    <script type="text/javascript" src="assets\pages\dashboard\custom-dashboard.js"></script>
+    <script type="text/javascript" src="assets\js\script.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+</body>
+
+</html>
